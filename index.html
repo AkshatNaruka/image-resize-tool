@@ -1,0 +1,159 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Image Resizer</title>
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .app {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .header img {
+            width: 30px;
+            margin-right: 8px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .image-container {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container .choose-file {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            border: 2px dashed #ccc;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .input-container label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .input-container input {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            width: 60px;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .buttons-container button {
+            padding: 12px 24px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0070c9;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .download-link {
+            padding: 12px 24px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0070c9;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="app">
+            <div class="header">
+                <a href="index.html"><img src="Group 14.png" alt="Image Resizer Logo"></a>
+                <h1>Image Resizer</h1>
+            </div>
+            <div class="image-container">
+                <div class="choose-file" id="chooseFile">
+                    <label for="fileInput">Choose File</label>
+                </div>
+                <img id="previewImage" src="" alt="Preview Image" style="display: none;">
+            </div>
+            <div class="input-container">
+                <label for="widthInput">Width(px)</label>
+                <input id="widthInput" type="number" min="1" step="1">
+                <label for="heightInput" style="padding-left: 10px;">Height(px)</label>
+                <input id="heightInput" type="number" min="1" step="1">
+            </div>
+            <div class="buttons-container">
+                <button id="resizeButton">Resize</button>
+                <a id="downloadLink" class="download-link" href="#" download>Download</a>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
